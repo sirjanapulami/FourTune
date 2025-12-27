@@ -1,48 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
+
     <title>FourTune Decoration | Creating Unforgottable Moments in Nepal</title>
     <style>
-        .main{
+        body {
+            margin: auto;
+            max-width: 100%;
+            background-color: #f7fafd;
+        }
+
+        .main {
             margin: 20px;
         }
-        .logo div{
-           line-height: 1.0;
+
+        .logo div {
+            line-height: 1.0;
             text-align: center;
         }
-        .logo .top-logo{
+
+        .logo .top-logo {
             font-size: 30px;
-             font-weight: bold;
-           
+            font-weight: bold;
+
 
         }
-        .logo .down-logo{
+
+        .logo .down-logo {
             font-weight: 500;
             font-size: 20px;
         }
-        .navbar{
+
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 40px;
         }
-        li{
+
+        li {
             list-style: none;
         }
-        a{
+
+        a {
             text-decoration: none;
             color: black;
         }
-        a:hover{
+
+        a:hover {
             text-decoration: underline;
         }
-        .right-nav{
+
+        .right-nav {
             display: flex;
             gap: 20px;
-            font-size:18px;
+            font-size: 18px;
             align-items: center;
         }
-        .right-nav button{
+
+        .right-nav button {
             padding-top: 6px;
             padding-bottom: 6px;
             padding-left: 10px;
@@ -52,22 +69,479 @@
             background-color: rgb(24, 119, 242);
             color: white;
             font-weight: 700;
-            border:none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .catalog {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        .left-c {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 50%;
+        }
+
+        .left-c h1 {
+            font-size: 50px;
+            font-family: 'Times New Roman', Times, serif;
+            margin-bottom: 5px;
+
+        }
+
+        .left-c p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .right-c {
+            width: 50%;
+            background-color: black;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 762px;
+
+        }
+
+        .right-c img,
+        .down-lc img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .top-lc {
+            height: 400px;
+            background-color: rgb(211, 211, 252);
+            border-radius: 15px;
+            padding-left: 38px;
+            padding-right: 38px;
+            overflow: hidden;
+
+        }
+
+        .down-lc {
+            display: flex;
+            gap: 10px;
+            height: 350px;
+
+        }
+
+        .down-lc .left-dlc {
+            width: 50%;
+            background-color: aliceblue;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .down-lc .right-dlc {
+            width: 50%;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        img {
+            width: 200px;
+        }
+
+        .top-lc p {
+            color: #333;
+            margin-bottom: 65px;
+        }
+
+        .top-lc button {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 5px;
+            font-size: 15px;
+            background-color: rgb(8, 8, 8);
+            color: white;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+        }
+
+        .decor-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+
+        }
+
+        .all-decor {
+            padding-left: 40px;
+            padding-right: 40px;
+            margin-top: 50px;
+        }
+
+        .decor-item {
+
+            width: 100%;
+            border-radius: 15px;
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            padding: 10px;
+        }
+
+        .decor-img {
+            overflow: hidden;
+            height: 250px;
+            border-radius: 15px;
+        }
+
+        .decor-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition-duration: 0.5s;
+            transition-timing-function: ease-in-out;
+        }
+
+        .decor-title {
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        .decor-price {
+            font-size: 16px;
+            margin-bottom: 29px;
+        }
+
+        .decor-price span {
+            color: rgb(24, 119, 242);
+
+        }
+
+        .decor-img img:hover {
+            scale: 1.15;
+
+        }
+
+        .decor-info {
+            padding: 8px;
+        }
+
+        .decor-desc {
+            font-size: 18px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        .decor-item button {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 5px;
+            font-size: 15px;
+            background-color: rgb(24, 119, 242);
+            color: white;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: wheat;
+            padding: 15px;
+            margin-top: 10px;
+            font-size: 18px;
         }
     </style>
 </head>
+
 <body>
     <div class="main">
         <nav class="navbar">
             <div class="logo">
-               <div class="top-logo">FourTune</div>
-               <div class="down-logo"> Decoration</div>
+                <div class="top-logo">FourTune</div>
+                <div class="down-logo"> Decoration</div>
             </div>
             <div class="right-nav">
                 <li><a href="/about.html">About Us</a></li>
-                <li><button class="login">Login →</button></li>
+                <li> <a href="/login.html"><button class="login">Login →</button> </a> </li>
             </div>
         </nav>
+
+        <div class="catalog">
+            <div class="left-c">
+                <div class="top-lc">
+                    <h1 class="slogon">Creating Unforgottable Moments in Nepal</h1>
+                    <p>We specialize in transforming events into breath taking experiences accros Nepal. From weddings
+                        to corporate gatherings, we blend traditional Nepali elements with modern design, crafting
+                        unforgottable moments that linger in the heart of attendees.</p>
+                    <a href="/contactus.html"><button> Contact Us</button></a>
+                </div>
+                <div class="down-lc">
+                    <div class="left-dlc">
+                        <img src="./images/left-dlc.jpg" alt="">
+                    </div>
+                    <div class="right-dlc">
+                        <img src="./images/right-dlc.jpg" alt="">
+
+                    </div>
+                </div>
+            </div>
+            <div class="right-c">
+                <img src="./images/right-c.jpg" alt="" srcset="">
+            </div>
+        </div>
+        <div class="all-decor">
+            <h1>All Decorations</h1>
+            <div class="decor-grid">
+                <div class="decor-item">
+                    <div class="decor-img">
+                        <img src="./images/bouquet.webp">
+                    </div>
+                    <div class="decor-info">
+
+
+                        <div class="decor-title">Flower Bouquet Decoration</div>
+                        <div class="decor-desc">
+                            A flower bouquet decoration for your special day.
+                        </div>
+                        <div class="decor-price">
+                            Starting from <span>Rs. 1000</span>
+                        </div>
+                        <a href="/product/flower-bouquet.html"><button class="view-details">View Details</Details>
+                                </button></a>
+                    </div>
+                </div>
+                <div class="decor-item">
+                    <div class="decor-img">
+                        <img src="./images/flower1.jpg">
+                    </div>
+                    <div class="decor-info">
+
+
+                        <div class="decor-title">Flower Design Nepal</div>
+                        <div class="decor-desc">
+                           Decorate your passage with exotic floral design.
+                        </div>
+                        <div class="decor-price">
+                            Starting from <span>Rs. 30000</span>
+                        </div>
+                        <a href="/product/flower-bouquet.html"><button class="view-details">View Details</Details>
+                                </button></a>
+                    </div>
+                </div>
+                <div class="decor-item">
+                    <div class="decor-img">
+                        <img src="./images/mandap.jpg" alt="">
+                    </div>
+                    <div class="decor-info">
+
+
+                        <div class="decor-title">Mandap Design Nepal</div>
+                        <div class="decor-desc">
+                           Make your day special with our beautifull mandap decorations.
+                        </div>
+                        <div class="decor-price">
+                            Starting from <span>Rs. 19000</span>
+                        </div>
+                        <a href="/product/flower-bouquet.html"><button class="view-details">View Details</Details>
+                                </button></a>
+                    </div>
+                </div>
+                <div class="decor-item">
+                    <div class="decor-img">
+                        <img src="./images/reception.jpg" alt="">
+                    </div>
+                    <div class="decor-info">
+
+
+                        <div class="decor-title">Engagement Design Nepal</div>
+                        <div class="decor-desc">
+                           Design your perfect engagement moment with us.
+                        </div>
+                        <div class="decor-price">
+                            Starting from <span>Rs. 15000</span>
+                        </div>
+                        <a href="/product/flower-bouquet.html"><button class="view-details">View Details</Details>
+                                </button></a>
+                    </div>
+                </div>
+                <div class="decor-item">
+                    <div class="decor-img">
+                        <img src="./images/archway.jpg" alt="">
+                    </div>
+                    <div class="decor-info">
+
+
+                        <div class="decor-title">Elegant Floral Archway</div>
+                        <div class="decor-desc">
+                            Reserve your floral archway for a graceful celebration.
+                        </div>
+                        <div class="decor-price">
+                            Starting from <span>Rs. 30000</span>
+                        </div>
+                        <a href="/product/flower-bouquet.html"><button class="view-details">View Details</Details>
+                                </button></a>
+                    </div>
+                </div>
+                <div class="decor-item">
+                    <div class="decor-img">
+                        <img src="./images/gateway.jpg" alt="">
+                    </div>
+                    <div class="decor-info">
+
+
+                        <div class="decor-title">The Grand Floral Gateway</div>
+                        <div class="decor-desc">
+                            Where grand blooms create a breathtaking welcome.
+                        </div>
+                        <div class="decor-price">
+                            Starting from <span>Rs. 40000</span>
+                        </div>
+                        <a href="/product/flower-bouquet.html"><button class="view-details">View Details</Details>
+                                </button></a>
+                    </div>
+                </div>
+                <div class="decor-item">
+                    <div class="decor-img">
+                        <img src="./images/blossom.jpg" alt="">
+                    </div>
+                    <div class="decor-info">
+
+
+                        <div class="decor-title">Blossom Welcome Board</div>
+                        <div class="decor-desc">
+                            A graceful blossom welcome for your special day.
+                        </div>
+                        <div class="decor-price">
+                            Starting from <span>Rs. 3000</span>
+                        </div>
+                        <a href="/product/flower-bouquet.html"><button class="view-details">View Details</Details>
+                                </button></a>
+                    </div>
+                </div>
+                <div class="decor-item">
+                    <div class="decor-img">
+                        <img src="./images/bouquet.webp" alt="">
+                    </div>
+                    <div class="decor-info">
+
+
+                        <div class="decor-title">Flower Bouquet Decoration</div>
+                        <div class="decor-desc">
+                            A flower bouquet decoration for your special day
+                        </div>
+                        <div class="decor-price">
+                            Starting from <span>Rs. 5000</span>
+                        </div>
+                        <a href="/product/flower-bouquet.html"><button class="view-details">View Details</Details>
+                                </button></a>
+                    </div>
+                </div>
+                <div class="decor-item">
+                    <div class="decor-img">
+                        <img src="./images/bouquet.webp" alt="">
+                    </div>
+                    <div class="decor-info">
+
+
+                        <div class="decor-title">Flower Bouquet Decoration</div>
+                        <div class="decor-desc">
+                            A flower bouquet decoration for your special day
+                        </div>
+                        <div class="decor-price">
+                            Starting from <span>Rs. 5000</span>
+                        </div>
+                        <a href="/product/flower-bouquet.html"><button class="view-details">View Details</Details>
+                                </button></a>
+                    </div>
+                </div>
+                <div class="decor-item">
+                    <div class="decor-img">
+                        <img src="./images/bouquet.webp" alt="">
+                    </div>
+                    <div class="decor-info">
+
+
+                        <div class="decor-title">Flower Bouquet Decoration</div>
+                        <div class="decor-desc">
+                            A flower bouquet decoration for your special day
+                        </div>
+                        <div class="decor-price">
+                            Starting from <span>Rs. 5000</span>
+                        </div>
+                        <a href="/product/flower-bouquet.html"><button class="view-details">View Details</Details>
+                                </button></a>
+                    </div>
+                </div>
+                <div class="decor-item">
+                    <div class="decor-img">
+                        <img src="./images/bouquet.webp" alt="">
+                    </div>
+                    <div class="decor-info">
+
+
+                        <div class="decor-title">Flower Bouquet Decoration</div>
+                        <div class="decor-desc">
+                            A flower bouquet decoration for your special day
+                        </div>
+                        <div class="decor-price">
+                            Starting from <span>Rs. 5000</span>
+                        </div>
+                        <a href="/product/flower-bouquet.html"><button class="view-details">View Details</Details>
+                                </button></a>
+                    </div>
+                </div>
+                <div class="decor-item">
+                    <div class="decor-img">
+                        <img src="./images/bouquet.webp" alt="">
+                    </div>
+                    <div class="decor-info">
+
+
+                        <div class="decor-title">Flower Bouquet Decoration</div>
+                        <div class="decor-desc">
+                            A flower bouquet decoration for your special day
+                        </div>
+                        <div class="decor-price">
+                            Starting from <span>Rs. 5000</span>
+                        </div>
+                        <a href="/product/flower-bouquet.html"><button class="view-details">View Details</Details>
+                                </button></a>
+                    </div>
+                </div>
+                <div class="decor-item">
+                    <div class="decor-img">
+                        <img src="./images/bouquet.webp" alt="">
+                    </div>
+                    <div class="decor-info">
+
+
+                        <div class="decor-title">Flower Bouquet Decoration</div>
+                        <div class="decor-desc">
+                            A flower bouquet decoration for your special day
+                        </div>
+                        <div class="decor-price">
+                            Starting from <span>Rs. 5000</span>
+                        </div>
+                        <a href="/product/flower-bouquet.html"><button class="view-details">View Details</Details>
+                                </button></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+        FourTune Decorations | Made by Sirjana, Manisha, Nishma & Sabina
     </div>
 </body>
+
 </html>
