@@ -97,6 +97,7 @@
         }
 
         .right-c img,
+        .right-c video,
         .down-lc img {
             height: 100%;
             width: 100%;
