@@ -84,7 +84,7 @@
 
         .left-c p {
             font-size: 16px;
-            line-height: 1.5;
+            line-height: 1.9;
         }
 
         .right-c {
@@ -159,7 +159,8 @@
 
         .decor-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
             gap: 40px;
 
         }
@@ -198,6 +199,9 @@
             margin-bottom: 5px;
             font-size: 26px;
             font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .decor-price {
