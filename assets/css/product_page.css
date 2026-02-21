@@ -1,39 +1,39 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f7fb;
+    background-color: #f5f8fc;
     margin: 0;
     padding: 40px;
 }
 
-.main-container {
+.container {
     background: white;
     padding: 40px;
     border-radius: 8px;
 }
 
-.product-section {
+.product-layout {
     display: flex;
     gap: 50px;
 }
 
-.left-side {
+.product-image {
     width: 50%;
 }
 
-.left-side img {
+.product-image img {
     width: 100%;
     height: 500px;
     object-fit: cover;
     border-radius: 6px;
 }
 
-.right-side {
+.product-details {
     width: 50%;
 }
 
-.right-side h1 {
+.product-details h1 {
     margin-top: 0;
-    font-size: 32px;
+    font-size: 30px;
 }
 
 .price {
