@@ -63,3 +63,35 @@ ul {
 .event-info {
     margin-top: 50px;
 }
+.product-image {
+            position: relative;
+        }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .left-btn {
+            left: 0;
+            margin-left: 10px;
+        }
+
+        .right-btn {
+            right: 0;
+            margin-right: 10px;
+        }
+
+        .right-btn svg {
+            transform: scaleX(-1);
+        }
+
+        .nav-btn svg {
+            width: 25px;
+            height: 25px;
+            background-color: aliceblue;
+            border-radius: 50%;
+            padding: 8px;
+        }

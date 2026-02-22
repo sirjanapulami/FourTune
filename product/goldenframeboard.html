@@ -4,16 +4,65 @@
     <meta charset="UTF-8">
     <title>Golden Frame Welcome Board</title>
     <link rel="stylesheet" href="../assets/css/product_page.css" />
+    <link rel="stylesheet" href="../assets/css/home_page.css"/>
+
+    <script src="../assets/script/product.js"></script>
+    <script>
+        const images = [
+            "../assets/images/goldenframe.jpg",
+            "../assets/images/goldenframe1.jpg"
+        ]
+    </script>
 </head>
 <body>
+     <nav class="navbar">
+            <div class="logo">
+                <div class="top-logo">FourTune</div>
+                <div class="down-logo"> Decoration</div>
+            </div>
+            <div class="right-nav">
+                <li><a href="/about.html">About Us</a></li>
+                <li> <a href="/login.html"><button class="login">Login →</button> </a> </li>
+            </div>
+        </nav>
 
 <div class="container">
 
     <div class="product-layout">
 
     
-        <div class="product-image">
-            <img src="../assets/images/goldenframe.jpg" alt="Golden Frame Welcome Board">
+       <div class="product-image">
+            <div class="nav-btn left-btn" onclick="onLeft()">
+                <svg fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"
+                    enable-background="new 0 0 100 100" xml:space="preserve" stroke="#000000" stroke-width="4.5">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <g>
+                            <path
+                                d="M33.934,54.458l30.822,27.938c0.383,0.348,0.864,0.519,1.344,0.519c0.545,0,1.087-0.222,1.482-0.657 c0.741-0.818,0.68-2.083-0.139-2.824L37.801,52.564L64.67,22.921c0.742-0.818,0.68-2.083-0.139-2.824 c-0.817-0.742-2.082-0.679-2.824,0.139L33.768,51.059c-0.439,0.485-0.59,1.126-0.475,1.723 C33.234,53.39,33.446,54.017,33.934,54.458z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <img id="img" src="../assets/images/goldenframe.jpg" alt="Bouquet">
+            <div class="nav-btn right-btn" onclick="onRight()">
+                <svg fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"
+                    enable-background="new 0 0 100 100" xml:space="preserve" stroke="#000000" stroke-width="4.5">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <g>
+                            <path
+                                d="M33.934,54.458l30.822,27.938c0.383,0.348,0.864,0.519,1.344,0.519c0.545,0,1.087-0.222,1.482-0.657 c0.741-0.818,0.68-2.083-0.139-2.824L37.801,52.564L64.67,22.921c0.742-0.818,0.68-2.083-0.139-2.824 c-0.817-0.742-2.082-0.679-2.824,0.139L33.768,51.059c-0.439,0.485-0.59,1.126-0.475,1.723 C33.234,53.39,33.446,54.017,33.934,54.458z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+            </div>
         </div>
 
         
