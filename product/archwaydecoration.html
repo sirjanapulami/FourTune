@@ -13,7 +13,7 @@
     <script>
         const images = [
             "../assets/images/blossomarchway.jpg",
-            "../assets/images/archway.jpg"
+            "../assets/images/blossomarchway1.jpg"
         ]
         const prices=[
             20000,35000
@@ -22,10 +22,11 @@
 </head>
 <body>
     <nav class="navbar">
-            <div class="logo">
+            <a href="/pages/home.html"><div class="logo">
                 <div class="top-logo">FourTune</div>
                 <div class="down-logo"> Decoration</div>
             </div>
+            </a>
             <div class="right-nav">
                 <li><a href="/about.html">About Us</a></li>
                 <li> <a href="/login.html"><button class="login">Login →</button> </a> </li>
@@ -92,7 +93,7 @@
                 <li>Soft decorative lighting</li>
             </ul>
 
-            <button class="book-btn">Book Now</button>
+            <button class="book-btn" onclick="openBookingPopup()">Book Now</button>
         </div>
 
         
