@@ -11,6 +11,7 @@ function onLeft() {
     }
 
     document.getElementById("img").setAttribute("src", images[index])
+    document.getElementById("price").innerHTML=prices[index]
 }
 
 function onRight() {
@@ -22,4 +23,5 @@ function onRight() {
     }
 
     document.getElementById("img").setAttribute("src", images[index])
+    document.getElementById("price").innerHTML=prices[index]
 }
