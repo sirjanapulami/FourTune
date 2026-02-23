@@ -11,30 +11,6 @@
             max-width: 100%;
             background-color: #f7fafd;
         }
-
-        .box {
-            position: relative;
-
-        }
-
-        .box input {
-            width: 500px;
-            height: 30px;
-            border-radius: 5px;
-            border: 1px solid black;
-            padding-left: 5px;
-        }
-
-        .srchlogo {
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 30px;
-            height: 100%;
-            justify-content: center;
-            display: flex;
-            cursor: pointer;
-        }
     </style>
 </head>
 
@@ -59,10 +35,32 @@
                     </svg></div>
             </div>
             <div class="right-nav">
-                <li><a href="/about.html">About Us</a></li>
-                <li> <a href="/login.html"><button class="login">Login →</button> </a> </li>
+                <li><a href="/pages/contact.html">About Us</a></li><li id="authItem">
+            <a href="/pages/login.html">
+                <button class="login">Login →</button>
+            </a>
+        </li>
             </div>
         </nav>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+
+                const authItem = document.getElementById("authItem");
+                const user = JSON.parse(localStorage.getItem("user"));
+
+                if (user) {
+                    authItem.innerHTML = `
+                        <button class="login" onclick="logoutUser()">Logout →</button>
+                    `;
+                }
+            });
+
+            function logoutUser() {
+                localStorage.removeItem("user");
+                location.reload();
+            }
+        </script>
 
         <div class="catalog">
             <div class="left-c">
@@ -71,7 +69,7 @@
                     <p>We specialize in transforming events into breath taking experiences accros Nepal. From weddings
                         to corporate gatherings, we blend traditional Nepali elements with modern design, crafting
                         unforgottable moments that linger in the heart of attendees.</p>
-                    <a href="/contactus.html"><button> Contact Us</button></a>
+                    <a href="/pages/contact.html"><button> Contact Us</button></a>
                 </div>
                 <div class="down-lc">
                     <div class="left-dlc">
