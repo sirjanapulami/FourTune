@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fourtune Design</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fcfbfb;
+    color: rgb(27, 23, 23);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #1a1a1a;
+}
+
+nav h2 {
+    color: #d4af37;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(10, 9, 9);
+    font-size: 14px;
+}
+
+nav ul li a:hover {
+    color: #d4af37;
+}
+
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.login-box {
+    background-color: #d8d3d3;
+    padding: 40px;
+    border-radius: 15px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(196, 192, 192, 0.5);
+}
+
+.login-box img {
+    width: 140px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    background-color: #2a2a2a;
+    color: white;
+}
+
+.login-box input:focus {
+    outline: 1px solid #d4af37;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #d4af37;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background-color: #f1d36a;
+}
+
+section {
+    padding: 60px 50px;
+    text-align: center;
+}
+
+section h2 {
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #1a1a1a;
+    font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+
+<nav>
+    <h2>FOURTUNE DESIGN</h2>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+    </ul>
+</nav>
+
+<div class="login-section">
+    <div class="login-box">
+        <img src="logo.png" alt="Logo">
+        <h3>Welcome Back</h3>
+        <input type="text" placeholder="Enter your Email or Phone Number">
+        <input type="password" placeholder="Enter your Password">
+        <button>Login</button>
+    </div>
+</div>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>
+        Fourtune Design is a creative brand focused on delivering modern,
+        elegant and professional design solutions. Established in 2025,
+        we believe in creativity, quality and customer satisfaction.
+    </p>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: fourtunedesign@email.com</p>
+    <p>Phone: +977-98XXXXXXXX</p>
+    <p>Location: Kathmandu, Nepal</p>
+</section>
+
+<footer>
+    © 2025 Fourtune Design. All Rights Reserved.
+</footer>
+
+</body>
+</html>
