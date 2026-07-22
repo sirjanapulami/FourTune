@@ -1,8 +1,7 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f8fc;
-    margin: 0;
-    padding: 40px;
+    margin: 20px;
+    max-width: 100%;
+    background-color: #f7fafd;
 }
 
 .container {

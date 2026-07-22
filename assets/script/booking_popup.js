@@ -1,4 +1,7 @@
 function openBookingPopup() {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user) return window.location.href = "/pages/login.html"
+
     if (document.getElementById("bookingOverlay")) {
         document.getElementById("bookingOverlay").style.display = "flex";
         return;
@@ -52,13 +55,9 @@ function openBookingPopup() {
     document.body.appendChild(overlay);
     overlay.style.display = "flex";
 
-    const user = JSON.parse(localStorage.getItem("user"));
-
-    if (user) {
-        if (user.name) document.getElementById("popupName").value = user.name;
-        if (user.email) document.getElementById("popupEmail").value = user.email;
-        if (user.phone) document.getElementById("popupPhone").value = user.phone;
-    }
+    document.getElementById("popupName").value = user.name;
+    document.getElementById("popupEmail").value = user.email;
+    document.getElementById("popupPhone").value = user.phone;
 }
 
 function closeBookingPopup() {
@@ -72,14 +71,36 @@ function submitPopupBooking() {
     const phone = document.getElementById("popupPhone").value;
     const date = document.getElementById("popupDate").value;
     const location = document.getElementById("popupLocation").value;
+    const message = document.getElementById("popupMessage").value;
+    const productName = document.getElementById("name").innerText;
+    const productPrice = document.getElementById("name").innerText;
+    const productImg = document.getElementById("img").src;
 
     if (!name || !email || !phone || !date || !location) {
         alert("Please fill all required fields!");
         return;
     }
 
+    const booking = {
+        productName: productName,
+        productPrice: productPrice,
+        productImg: productImg,
+        customerName: name,
+        customerEmail: email,
+        customerPhone: phone,
+        eventDate: date,
+        eventLocation: location,
+        specialRequirements: message
+    };
+
+    let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+    bookings.push(booking);
+
+    localStorage.setItem("bookings", JSON.stringify(bookings));
+
     document.getElementById("popupSuccessMsg").innerText = "Booking Successful!";
-    alert("Booking Successful!")
+    alert("Booking Successful!");
 
     // Clear non-user fields
     document.getElementById("popupDate").value = "";

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../assets/css/login_page.css">
+    <style>
+        body {
+            margin: auto;
+            max-width: 100%;
+            background: #f7fafd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-section">
+        <div class="login-box">
+            <img src="/assets/images/FourtuneDesign.png" alt="Logo">
+            <h2>Create Account</h2>
+            <input type="text" id="name" placeholder="Full Name">
+            <input type="email" id="email" placeholder="Email">
+            <input type="tel" id="phone" placeholder="Phone Number">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="registerUser()">Register</button>
+            <p>Already have an account?</p>
+            <a href="login.html">Login
+            </a>
+            <div class="message" id="message"></div>
+        </div>
+    </div>
+    <footer>
+        © 2026 Fourtune Design. All Rights Reserved.
+    </footer>
+    <script>
+        function registerUser() {
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let message = document.getElementById("message");
+            if (name == "" || email == "" || phone == "" || password == "") {
+                message.innerHTML = "Please fill all fields.";
+                return;
+            }
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].email == email) {
+                    message.innerHTML = "Email already registered.";
+                    return;
+                }
+            }
+            let user = {
+                name: name,
+                email: email,
+                phone: phone,
+                password: password
+            };
+            users.push(user);
+            localStorage.setItem("users", JSON.stringify(users));
+            message.innerHTML = "Registration Successful!";
+            alert("Registration Successful");
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+
+</html>

@@ -9,6 +9,7 @@
 
     <script src="../assets/script/product.js"></script>
      <script src="../assets/script/booking_popup.js"></script>
+<script src="../assets/script/auth.js"></script>
 
     <script>
         const images = [
@@ -22,13 +23,19 @@
 </head>
 <body>
      <nav class="navbar">
-            <div class="logo">
+            <a href="/pages/home.html"><div class="logo">
                 <div class="top-logo">FourTune</div>
                 <div class="down-logo"> Decoration</div>
             </div>
+            </a>
             <div class="right-nav">
                 <li><a href="/pages/contact.html">About Us</a></li>
-                <li> <a href="/pages/login.html"><button class="login">Login →</button> </a> </li>
+<li id="booking-link"></li>
+                <li id="authItem">
+                    <a href="/pages/login.html">
+                        <button class="login">Login →</button>
+                    </a>
+                </li>
             </div>
         </nav>
 
@@ -73,7 +80,7 @@
 
         
         <div class="product-details">
-            <h1>Engagement Design Decoration</h1>
+            <h1 id="name">Engagement Design Decoration</h1>
 
             <p>
                 Design your perfect engagement celebration with elegant floral themes,

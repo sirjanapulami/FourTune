@@ -5,6 +5,7 @@
 
     <title>FourTune Decoration | Creating Unforgottable Moments in Nepal</title>
     <link rel="stylesheet" href="/assets/css/home_page.css">
+    <script src="../assets/script/auth.js"></script>
     <style>
         body {
             margin: auto;
@@ -22,45 +23,16 @@
                 <div class="top-logo">FourTune</div>
                 <div class="down-logo"> Decoration</div>
             </div>
-            <div class="box">
-                <input type="text" placeholder="Search">
-                <div class="srchlogo"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M15 10.5C15 12.9853 12.9853 15 10.5 15C8.01472 15 6 12.9853 6 10.5C6 8.01472 8.01472 6 10.5 6C12.9853 6 15 8.01472 15 10.5ZM14.1793 15.2399C13.1632 16.0297 11.8865 16.5 10.5 16.5C7.18629 16.5 4.5 13.8137 4.5 10.5C4.5 7.18629 7.18629 4.5 10.5 4.5C13.8137 4.5 16.5 7.18629 16.5 10.5C16.5 11.8865 16.0297 13.1632 15.2399 14.1792L20.0304 18.9697L18.9697 20.0303L14.1793 15.2399Z"
-                                fill="#080341"></path>
-                        </g>
-                    </svg></div>
-            </div>
             <div class="right-nav">
-                <li><a href="/pages/contact.html">About Us</a></li><li id="authItem">
-            <a href="/pages/login.html">
-                <button class="login">Login →</button>
-            </a>
-        </li>
+                <li><a href="/pages/contact.html">About Us</a></li>
+<li id="booking-link"></li>
+                <li id="authItem">
+                    <a href="/pages/login.html">
+                        <button class="login">Login →</button>
+                    </a>
+                </li>
             </div>
         </nav>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-
-                const authItem = document.getElementById("authItem");
-                const user = JSON.parse(localStorage.getItem("user"));
-
-                if (user) {
-                    authItem.innerHTML = `
-                        <button class="login" onclick="logoutUser()">Logout →</button>
-                    `;
-                }
-            });
-
-            function logoutUser() {
-                localStorage.removeItem("user");
-                location.reload();
-            }
-        </script>
 
         <div class="catalog">
             <div class="left-c">

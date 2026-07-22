@@ -1,112 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Blossom Archway Decoration</title>
     <link rel="stylesheet" href="../assets/css/product_page.css" />
-    <link rel="stylesheet" href="../assets/css/home_page.css"/>
+    <link rel="stylesheet" href="../assets/css/home_page.css" />
     <link rel="stylesheet" href="../assets/css/booking_popup.css" />
 
     <script src="../assets/script/product.js"></script>
-     <script src="../assets/script/booking_popup.js"></script>
+    <script src="../assets/script/booking_popup.js"></script>
+    <script src="../assets/script/auth.js"></script>
 
     <script>
         const images = [
             "../assets/images/blossomarchway.jpg",
             "../assets/images/blossomarchway1.jpg"
         ]
-        const prices=[
-            20000,35000
+        const prices = [
+            20000, 35000
         ]
     </script>
 </head>
+
 <body>
     <nav class="navbar">
-            <a href="/pages/home.html"><div class="logo">
+        <a href="/pages/home.html">
+            <div class="logo">
                 <div class="top-logo">FourTune</div>
                 <div class="down-logo"> Decoration</div>
             </div>
-            </a>
-            <div class="right-nav">
-                <li><a href="/pages/contact.html">About Us</a></li>
-                <li> <a href="/pages/login.html"><button class="login">Login →</button> </a> </li>
-            </div>
-        </nav>
+        </a>
+        <div class="right-nav">
+            <li><a href="/pages/contact.html">About Us</a></li>
+            <li id="booking-link"></li>
+            <li id="authItem">
+                <a href="/pages/login.html">
+                    <button class="login">Login →</button>
+                </a>
+            </li>
+        </div>
+    </nav>
 
-<div class="container">
+    <div class="container">
 
-    <div class="product-layout">
+        <div class="product-layout">
 
-    
-       <div class="product-image">
-            <div class="nav-btn left-btn" onclick="onLeft()">
-                <svg fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"
-                    enable-background="new 0 0 100 100" xml:space="preserve" stroke="#000000" stroke-width="4.5">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <g>
-                            <path
-                                d="M33.934,54.458l30.822,27.938c0.383,0.348,0.864,0.519,1.344,0.519c0.545,0,1.087-0.222,1.482-0.657 c0.741-0.818,0.68-2.083-0.139-2.824L37.801,52.564L64.67,22.921c0.742-0.818,0.68-2.083-0.139-2.824 c-0.817-0.742-2.082-0.679-2.824,0.139L33.768,51.059c-0.439,0.485-0.59,1.126-0.475,1.723 C33.234,53.39,33.446,54.017,33.934,54.458z">
-                            </path>
+
+            <div class="product-image">
+                <div class="nav-btn left-btn" onclick="onLeft()">
+                    <svg fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"
+                        enable-background="new 0 0 100 100" xml:space="preserve" stroke="#000000" stroke-width="4.5">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <g>
+                                <path
+                                    d="M33.934,54.458l30.822,27.938c0.383,0.348,0.864,0.519,1.344,0.519c0.545,0,1.087-0.222,1.482-0.657 c0.741-0.818,0.68-2.083-0.139-2.824L37.801,52.564L64.67,22.921c0.742-0.818,0.68-2.083-0.139-2.824 c-0.817-0.742-2.082-0.679-2.824,0.139L33.768,51.059c-0.439,0.485-0.59,1.126-0.475,1.723 C33.234,53.39,33.446,54.017,33.934,54.458z">
+                                </path>
+                            </g>
                         </g>
-                    </g>
-                </svg>
-            </div>
-            <img id="img" src="../assets/images/blossomarchway.jpg" alt="Bouquet">
-            <div class="nav-btn right-btn" onclick="onRight()">
-                <svg fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"
-                    enable-background="new 0 0 100 100" xml:space="preserve" stroke="#000000" stroke-width="4.5">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <g>
-                            <path
-                                d="M33.934,54.458l30.822,27.938c0.383,0.348,0.864,0.519,1.344,0.519c0.545,0,1.087-0.222,1.482-0.657 c0.741-0.818,0.68-2.083-0.139-2.824L37.801,52.564L64.67,22.921c0.742-0.818,0.68-2.083-0.139-2.824 c-0.817-0.742-2.082-0.679-2.824,0.139L33.768,51.059c-0.439,0.485-0.59,1.126-0.475,1.723 C33.234,53.39,33.446,54.017,33.934,54.458z">
-                            </path>
+                    </svg>
+                </div>
+                <img id="img" src="../assets/images/blossomarchway.jpg" alt="Bouquet">
+                <div class="nav-btn right-btn" onclick="onRight()">
+                    <svg fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"
+                        enable-background="new 0 0 100 100" xml:space="preserve" stroke="#000000" stroke-width="4.5">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <g>
+                                <path
+                                    d="M33.934,54.458l30.822,27.938c0.383,0.348,0.864,0.519,1.344,0.519c0.545,0,1.087-0.222,1.482-0.657 c0.741-0.818,0.68-2.083-0.139-2.824L37.801,52.564L64.67,22.921c0.742-0.818,0.68-2.083-0.139-2.824 c-0.817-0.742-2.082-0.679-2.824,0.139L33.768,51.059c-0.439,0.485-0.59,1.126-0.475,1.723 C33.234,53.39,33.446,54.017,33.934,54.458z">
+                                </path>
+                            </g>
                         </g>
-                    </g>
-                </svg>
+                    </svg>
+                </div>
             </div>
+
+
+            <div class="product-details">
+                <h1 id="name">Blossom Archway Decoration</h1>
+
+                <p>
+                    The Blossom Archway is a soft, romantic floral entrance designed to create
+                    a dreamy and elegant atmosphere for your celebration.Whether placed at the main
+                    entrance or as a stage backdrop, the Blossom Archway transforms your event into a
+                    beautiful floral paradise.
+                </p>
+
+                <p class="price">Starting from Rs. <span id="price">20000</span></p>
+
+                <h3>What’s Included:</h3>
+                <ul>
+                    <li>Premium seasonal fresh flowers</li>
+                    <li>Elegant fabric draping</li>
+                    <li>Custom color theme option</li>
+                    <li>Soft decorative lighting</li>
+                </ul>
+
+                <button class="book-btn" onclick="openBookingPopup()">Book Now</button>
+            </div>
+
+
         </div>
 
-        
-        <div class="product-details">
-            <h1>Blossom Archway Decoration</h1>
-
-            <p>
-                The Blossom Archway is a soft, romantic floral entrance designed to create 
-                a dreamy and elegant atmosphere for your celebration.Whether placed at the main 
-                entrance or as a stage backdrop, the Blossom Archway transforms your event into a 
-                beautiful floral paradise.
-            </p>
-
-            <p class="price">Starting from Rs. <span id="price">20000</span></p>
-
-            <h3>What’s Included:</h3>
-            <ul>
-                <li>Premium seasonal fresh flowers</li>
-                <li>Elegant fabric draping</li>
-                <li>Custom color theme option</li>
-                <li>Soft decorative lighting</li>
-            </ul>
-
-            <button class="book-btn" onclick="openBookingPopup()">Book Now</button>
+        <div class="event-info">
+            <h2>Event Information</h2>
+            <p><strong>Setup Time:</strong> 6–8 Hours</p>
+            <p><strong>Service Area:</strong> Kathmandu Valley & nearby locations</p>
+            <p><strong>Customization:</strong> Theme Customization Available</p>
         </div>
 
-        
     </div>
-
-    <div class="event-info">
-        <h2>Event Information</h2>
-        <p><strong>Setup Time:</strong> 6–8 Hours</p>
-        <p><strong>Service Area:</strong> Kathmandu Valley & nearby locations</p>
-        <p><strong>Customization:</strong> Theme Customization Available</p>
-    </div>
-
-</div>
 
 </body>
+
 </html>

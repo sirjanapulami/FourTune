@@ -1,102 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fourtune Design - Login</title>
-<link rel="stylesheet" href="../assets/css/login_page.css" />
-<style>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fourtune Design - Login</title>
+    <link rel="stylesheet" href="../assets/css/login_page.css" />
+    <style>
         body {
             margin: auto;
             max-width: 100%;
             background-color: #f7fafd;
         }
-</style>
+    </style>
 </head>
 
 <body>
-
-<div class="login-section">
-    <div class="login-box">
-        <img src="/assets/images/FourtuneDesign.png" alt="Logo">
-
-        <input type="text" id="fullName" placeholder="Full Name">
-        <input type="email" id="email" placeholder="Email">
-        <input type="tel" id="phone" placeholder="Phone Number">
-
-        <button onclick="loginUser()">Login</button>
-        <button onclick="logoutUser()" id="logoutBtn" style="display:none;background:#999;">Logout</button>
-
-        <div class="message" id="message"></div>
+    <div class="login-section">
+        <div class="login-box">
+            <img src="/assets/images/FourtuneDesign.png" alt="Logo">
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="loginUser()">Login</button>
+            <p>Don't have an account?</p>
+            <a href="register.html">
+               Register
+            </a>
+            <button onclick="logoutUser()" id="logoutBtn" style="display:none;background:#999;">
+                Logout
+            </button>
+            <div class="message" id="message"></div>
+        </div>
     </div>
-</div>
-
-<footer>
-    © 2026 Fourtune Design. All Rights Reserved.
-</footer>
-
-<script>
-
-window.onload = function () {
-    const user = JSON.parse(localStorage.getItem("user"));
-
-    if (user) {
-        document.getElementById("message").innerHTML = 
-            "Already logged in as <b>" + user.name + "</b>";
-        document.getElementById("message").classList.add("success");
-        document.getElementById("logoutBtn").style.display = "block";
-    }
-};
-
-function loginUser() {
-
-    const name = document.getElementById("fullName").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const message = document.getElementById("message");
-
-    message.classList.remove("success");
-
-    if (name === "" || email === "" || phone === "") {
-        message.innerText = "All fields are required.";
-        return;
-    }
-
-    if (!email.includes("@") || !email.includes(".")) {
-        message.innerText = "Enter a valid email.";
-        return;
-    }
-
-    if (phone.length < 7 || isNaN(phone)) {
-        message.innerText = "Enter a valid phone number.";
-        return;
-    }
-
-    const user = {
-        name: name,
-        email: email,
-        phone: phone
-    };
-
-    localStorage.setItem("user", JSON.stringify(user));
-
-    message.innerText = "Login successful!";
-    message.classList.add("success");
-
-    document.getElementById("logoutBtn").style.display = "block";
-
-    window.location.href = "/pages/home.html";
-}
-
-function logoutUser() {
-    localStorage.removeItem("user");
-    document.getElementById("message").innerText = "Logged out successfully.";
-    document.getElementById("message").classList.remove("success");
-    document.getElementById("logoutBtn").style.display = "none";
-}
-
-</script>
-
+    <footer>
+        © 2026 Fourtune Design. All Rights Reserved.
+    </footer>
+    <script>
+        window.onload = function () {
+            let user = JSON.parse(localStorage.getItem("user"));
+            if (user) {
+                document.getElementById("message").innerHTML =
+                    "Already logged in as <b>" + user.name + "</b>";
+                document.getElementById("logoutBtn").style.display = "block";
+            }
+        }
+        function loginUser() {
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let message = document.getElementById("message");
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+            let found = false;
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].email == email && users[i].password == password) {
+                    localStorage.setItem("user", JSON.stringify(users[i]));
+                    found = true;
+                    break;
+                }
+            }
+            if (found) {
+                message.innerHTML = "Login Successful!";
+                document.getElementById("logoutBtn").style.display = "block";
+                window.location.href = "/pages/home.html";
+            } else {
+                message.innerHTML = "Invalid email or password.";
+            }
+        }
+        function logoutUser() {
+            localStorage.removeItem("user");
+            document.getElementById("message").innerHTML = "Logged out.";
+            document.getElementById("logoutBtn").style.display = "none";
+        }
+    </script>
 </body>
+
 </html>
